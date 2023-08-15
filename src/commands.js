@@ -50,22 +50,10 @@ export const COMMANDS: {[string] : CommandType} = {
         url: "https://drive.google.com/drive/u/0",
         searchurl: "https://drive.google.com/drive/u/"
     },
-    sis: {
-        name: "UVA SIS",
-        url: "https://sisuva.admin.virginia.edu/psc/ihprd/UVSS/SA/s/WEBLIB_HCX_GN.H_SPRINGBOARD.FieldFormula.IScript_Main",
-    },
-    col: {
-        name: "UVA Collab",
-        url: "https://collab.its.virginia.edu/portal",
-    },
     yt: {
         name: "YouTube",
         url: "https://youtube.com/",
         searchurl: "https://www.youtube.com/results?search_query="
-    },
-    tv: {
-        name: "YouTube TV",
-        url: "https://tv.youtube.com/",
     },
     gh: {
         name: "GitHub",
@@ -81,101 +69,22 @@ export const COMMANDS: {[string] : CommandType} = {
         name: "Linkedin",
         url: "https://linkedin.com/",
     },
-    ig: {
-        name: "Instagram",
-        url: "https://instagram.com/",
-        searchurl: "https://instagram.com/"
-    },
-    tw: {
-        name: "Twitter",
-        url: "https://twitter.com/",
-        searchurl: "https://twitter.com/search?q="
-    },
-    me: {
-        name: "Rithik.me - Personal Website",
-        url: "https://rithik.me/me",
-    },
-    g: {
-        name: "Google",
-        url: "https://google.com/",
-        searchurl: "https://www.google.com/search?q="
-    },
-    wp: {
-        name: "Washington Post",
-        url: "https://www.washingtonpost.com/regional/"
-    },
-    wsj: {
-        name: "Wall Street Journal",
-        url: "https://www.wsj.com/"
-    },
-    cnn: {
-        name: "CNN",
-        url: "https://www.cnn.com/"
-    },
-    tr: {
-        name: "HooHacks Trello Board",
-        url: "https://trello.com/b/GjKhtVPK/hoohacks"
-    },
-    n: {
-        name: "Netflix",
-        url: "https://netflix.com/",
-        searchurl: "https://www.netflix.com/search?q="
-    },
-    h: {
-        name: "Hulu",
-        url: "https://hulu.com/",
-    },
-    pv: {
-        name: "Amazon Prime Video",
-        url: "https://www.amazon.com/Amazon-Video/b/?&node=2858778011&ref=dvm_MLP_ROWNA_US_1",
-        searchurl: "https://www.amazon.com/s?i=instant-video&ref=nb_sb_noss_2&k="
-    },
-    p: {
-        name: "Piazza",
-        url: "https://piazza.com/class"
-    },
     vs: {
         name: "VS Code",
         url: "vscode://",
-    },
-    wf: {
-        name: "Webflow",
-        url: "https://webflow.com/design/hoohacks"
-    },
-    hs: {
-        name: "Hubspot",
-        url: "https://app.hubspot.com/"
-    },
-    $: {
-        name: "Robinhood",
-        url: "https://robinhood.com/", 
-        searchurl: "https://robinhood.com/stocks/"
-    },
-    c: {
-        name: "Robinhood Crypto",
-        url: "https://robinhood.com/", 
-        searchurl: "https://robinhood.com/crypto/"
     },
     cal: {
         name: "Google Calendar",
         url: "https://calendar.google.com/calendar/r"
     },
-    uvacovid: {
-        name: "UVA COVID-19 Tracker",
-        url: "https://returntogrounds.virginia.edu/covid-tracker"
-    },
-    wiki: {
+    we: {
         name: "Wikipedia",
         url: "https://en.wikipedia.org",
         searchurl: "https://en.wikipedia.org/wiki/"
     },
-    todo: {
-        name: "Microsoft To Do",
-        url: "https://to-do.live.com"
-    },
     DEFAULT: {
-        name: "Default - Google Search",
-        url: "https://google.com/",
-        searchurl: "https://www.google.com/search?q="
+        name: "Default - Duck duck go Search",
+        url: "https://duckduckgo.com/",
+        searchurl: "https://www.duckduckgo.com/?q="
     }
 };
