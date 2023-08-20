@@ -76,6 +76,7 @@ const bunnylol: (string) => Promise<boolean> = async function (
   return false;
 };
 
+// TODO marshall the commands to deal with aliases
 const currCmd: string =
   new URL(window.location.href).searchParams.get("search") ?? "help";
 

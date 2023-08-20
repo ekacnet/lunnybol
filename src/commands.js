@@ -1,21 +1,24 @@
 // @flow strict
 
 export type CommandType = {|
-    name: string, 
-    url: string, 
+    name: string,
+    url: string,
     searchurl?: string,
+    aliases?: [string]
 |};
 
 
 export type CommandDataTableType = {|
     name: string,
     url: string,
-    command: string
+    command: string,
+    aliases: string,
+    searchurl: string
 |};
 
-export type ColumnDataTableType = {| 
-    data: string, 
-    title: string 
+export type ColumnDataTableType = {|
+    data: string,
+    title: string
 |};
 
 export const COMMANDS: {[string] : CommandType} = {

@@ -12,13 +12,17 @@ export const viewHelpPage: () => void = function(){
         return {
             name: cmdData.name, 
             url: cmdData.url, 
-            command: command
+            command: command,
+            aliases: (cmdData.aliases || [""]).join(', '),
+            searchurl: cmdData.searchurl || ""
         };
     });
     const columns: Array<ColumnDataTableType> = [
         {data: 'command', title: "Command"}, 
         {data: 'name', title: "Name"}, 
         {data: 'url', title: "URL"}, 
+        {data: 'searchurl', title: "SearchURL"},
+        {data: 'aliases', title: "Aliases"}
     ];
     // $FlowFixMe - jQuery import
     $('#help-table').DataTable({
