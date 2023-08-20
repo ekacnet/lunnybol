@@ -15,6 +15,7 @@ const bunnylol: (string) => Promise<boolean> = async function (
   currCmd: string
 ) {
   let arr: Array<string> = [];
+  // split the current command on spaces and '$' if it starts with a '$'
   if (currCmd.startsWith("$")) {
     arr = currCmd.split(/[ $+]/g);
     arr[0] = "$";
@@ -25,6 +26,7 @@ const bunnylol: (string) => Promise<boolean> = async function (
     arr = currCmd.split(/[ +]/g);
   }
   if (arr.length > 0) {
+    // Ignore the '.' at the end of the command
     const prefix: string = arr[0].endsWith(".")
       ? arr[0].substring(0, arr[0].length - 1).toLowerCase()
       : arr[0].toLowerCase();
