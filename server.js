@@ -33,12 +33,21 @@ async function writeFile(filePath, content, enc) {
 
 
 async function genSearchXML(callback) {
+  var failed = false
   f = function setValue(err, data) {
     if (!err) {
       callback(data)
+    } else {
+      failed = true
     }
   }
+  var gm = require('gm').subClass({imageMagick: '7+'})
   await gm(faviconPath).size(f)
+  // Retry with legacy ImageMagick if first one fails
+  if (failed) {
+    gm = require('gm').subClass({imageMagick: true})
+    await gm(faviconPath).size(f)
+  }
 }
 
 async function genSearchXMLFile(size) {
