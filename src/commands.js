@@ -7,7 +7,7 @@ export type CommandType = {|
     aliases?: [string]
 |};
 
-
+// Type for the Data table containing the commands
 export type CommandDataTableType = {|
     name: string,
     url: string,
@@ -16,10 +16,12 @@ export type CommandDataTableType = {|
     searchurl: string
 |};
 
-export type ColumnDataTableType = {|
+// Type for the header to display the commands
+export type CommandDataTableHeaderType = {|
     data: string,
     title: string
 |};
+
 
 export const COMMANDS: {[string] : CommandType} = {
     fb: {

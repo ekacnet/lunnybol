@@ -1,6 +1,6 @@
 // @flow strict
 
-import type {CommandDataTableType, ColumnDataTableType} from './commands.js';
+import type {CommandDataTableType, CommandDataTableHeaderType} from './commands.js';
 import type {ClassCommands, JoinOrDiscussType, ClassType} from './classes.js';
 
 import {COMMANDS} from './commands.js';
@@ -17,7 +17,7 @@ export const viewHelpPage: () => void = function(){
             searchurl: cmdData.searchurl || ""
         };
     });
-    const columns: Array<ColumnDataTableType> = [
+    const columns: Array<CommandDataTableHeaderType> = [
         {data: 'command', title: "Command"}, 
         {data: 'name', title: "Name"}, 
         {data: 'url', title: "URL"}, 
@@ -32,7 +32,7 @@ export const viewHelpPage: () => void = function(){
         paging: false
     });
 
-/*    const classesData: Array<CommandDataTableType> = Object.keys(CLASSES).map((command: ClassCommands) => {
+/*    const classesData: Array<CommandDataTableHeaderType> = Object.keys(CLASSES).map((command: ClassCommands) => {
         const cmdData = CLASSES[command];
         return {
             name: cmdData.name, 
