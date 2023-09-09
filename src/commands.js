@@ -98,6 +98,10 @@ export const COMMANDS: CommandAndKeyType = {
         url: "https://en.wikipedia.org",
         searchurl: "https://en.wikipedia.org/wiki/"
     },
+    hn: {
+        name: "HackerNews Daily",
+        url: "https://www.daemonology.net/hn-daily/",
+    },
     DEFAULT: {
         name: "Default - Duck duck go Search",
         url: "https://duckduckgo.com/",
