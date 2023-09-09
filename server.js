@@ -9,8 +9,8 @@ const router = express.Router();
 const port = process.env.BUNNYPORT || 3000;
 const name = process.env.BUNNYNAME || "LunnyBOL";
 const longname = process.env.BUNNYNAME || "LunnyBOL the search";
-const proto= process.env.PROTO || "http";
-const hostname = process.env.HOSTNAME || "localhost";
+const proto= process.env.BUNNYPROTO || "http";
+const hostname = process.env.BUNNYHOSTNAME || "localhost";
 const faviconPath = "static/images/favicon.ico";
 const searchXMLPath = "static/xml/firefox/opensearch.xml";
 
