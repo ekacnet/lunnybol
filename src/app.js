@@ -1,14 +1,45 @@
 // @flow strict
 
-import type { CommandType } from "./commands.js";
+import type { CommandType, CommandAndKeyType, CommandTypeUnormalized } from "./commands.js";
 //import type { ClassCommands, JoinOrDiscussType, ClassType } from "./classes.js";
 
 import { COMMANDS } from "./commands.js";
 //import { CLASSES } from "./classes.js";
 import { viewHelpPage } from "./help.js";
 
+
 const redirect: (string) => Promise<void> = async function (url: string) {
   await window.location.replace(url);
+};
+
+const parsecommands: (CommandAndKeyType) => {[string]: CommandTypeUnormalized} = function(inCommands: CommandAndKeyType) {
+  var ret: {[string]: CommandTypeUnormalized} = {};
+  for (var key of Object.keys(inCommands)) {
+    var val = inCommands[key];
+    var newVal: CommandTypeUnormalized = {
+      name: val.name,
+      url: val.url,
+      searchurl: val.searchurl,
+      otherNames: val.aliases,
+    }
+    ret[key] = newVal;
+    if (val.aliases && val.aliases.length) {
+      for(var altKey of val.aliases) {
+        var others = val.aliases.filter((elem) => elem != altKey);
+
+        var newVal: CommandTypeUnormalized = {
+          name: val.name,
+          url: val.url,
+          searchurl: val.searchurl,
+          otherNames: others.concat([key]),
+        }
+        ret[altKey] = newVal;
+
+      }
+    }
+  }
+  console.log(ret);
+  return ret;
 };
 
 const bunnylol: (string) => Promise<boolean> = async function (
@@ -52,9 +83,9 @@ const bunnylol: (string) => Promise<boolean> = async function (
       return true;
     }
 */
-    if (prefix in COMMANDS) {
+    if (prefix in parsedCommands) {
       // $FlowFixMe - this is actually correct since the prefix is a key.
-      const command: CommandType = COMMANDS[prefix];
+      const command: CommandType = parsedCommands[prefix];
       const protocol: string = new URL(command.url).protocol;
       if (protocol !== "https:" && protocol !== "http:") {
         viewHelpPage();
@@ -75,8 +106,8 @@ const bunnylol: (string) => Promise<boolean> = async function (
   }
   return false;
 };
+const parsedCommands = parsecommands(COMMANDS);
 
-// TODO marshall the commands to deal with aliases
 const currCmd: string =
   new URL(window.location.href).searchParams.get("search") ?? "help";
 
@@ -87,9 +118,9 @@ switch (currCmd) {
   default:
     bunnylol(currCmd)
       .then((done: boolean) => {
-        if (!done && COMMANDS.DEFAULT.searchurl) {
+        if (!done && parsedCommands.DEFAULT.searchurl) {
           redirect(
-            `${COMMANDS.DEFAULT.searchurl}${encodeURIComponent(currCmd)}`
+            `${parsedCommands.DEFAULT.searchurl}${encodeURIComponent(currCmd)}`
           );
         }
       })

@@ -4,8 +4,18 @@ export type CommandType = {|
     name: string,
     url: string,
     searchurl?: string,
-    aliases?: [string]
+    aliases?: Array<string>
 |};
+
+// CommandTypeUnormalized is pretty much like CommandType but
+// we don't want them to be mixed
+export type CommandTypeUnormalized = {|
+    name: string,
+    url: string,
+    searchurl?: string,
+    otherNames?: Array<string>
+|};
+
 
 // Type for the Data table containing the commands
 export type CommandDataTableType = {|
@@ -23,7 +33,8 @@ export type CommandDataTableHeaderType = {|
 |};
 
 
-export const COMMANDS: {[string] : CommandType} = {
+export type CommandAndKeyType = {[string]: CommandType};
+export const COMMANDS: CommandAndKeyType = {
     fb: {
         name: "Facebook",
         url: "https://facebook.com/",

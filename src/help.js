@@ -10,11 +10,11 @@ export const viewHelpPage: () => void = function(){
     const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map(command => {
         const cmdData = COMMANDS[command];
         return {
-            name: cmdData.name, 
-            url: cmdData.url, 
+            name: cmdData.name,
+            url: cmdData.url,
             command: command,
             aliases: (cmdData.aliases || [""]).join(', '),
-            searchurl: cmdData.searchurl || ""
+            searchurl: cmdData.searchurl || ""
         };
     });
     const columns: Array<CommandDataTableHeaderType> = [
