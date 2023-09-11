@@ -93,6 +93,20 @@ export const COMMANDS: CommandAndKeyType = {
         name: "Google Calendar",
         url: "https://calendar.google.com/calendar/r"
     },
+    notion: {
+        name: "Notion",
+        url: "https://notion.so",
+        // have a look at https://github.com/ssleptsov/shoto/blob/main/background.js#L77 for search
+        // url
+    },
+    sg: {
+        name: "Sweet green",
+        url: "https://order.sweetgreen.com/san-mateo/menu"
+    },
+    bk: {
+        name: "Buildkite",
+        url: "https://buildkite.com"
+    },
     we: {
         name: "Wikipedia",
         url: "https://en.wikipedia.org",
@@ -101,6 +115,10 @@ export const COMMANDS: CommandAndKeyType = {
     hn: {
         name: "HackerNews Daily",
         url: "https://www.daemonology.net/hn-daily/",
+    },
+    adp: {
+        name: "ADP payroll",
+        url: "https://www.adp.com"
     },
     DEFAULT: {
         name: "Default - Duck duck go Search",
