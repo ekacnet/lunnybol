@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+  lunnybol:
+    container_name: 'lunnybol'
+    build: .
+    restart: unless-stopped
+    ports:
+    - 3000:3000/tcp
+
