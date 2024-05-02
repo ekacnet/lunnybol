@@ -90,6 +90,7 @@ const bunnylol: (string) => Promise<boolean> = async function (
       if (protocol !== "https:" && protocol !== "http:") {
         viewHelpPage();
       }
+      // Handle searchUrl being a function so that things could be composed
       if (command.searchurl && arr.length !== 1) {
         const searchParam = prefix !== "$" ? prefix.length + 1 : prefix.length;
         await redirect(

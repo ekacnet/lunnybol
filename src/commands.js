@@ -108,9 +108,14 @@ export const COMMANDS: CommandAndKeyType = {
         url: "https://buildkite.com"
     },
     we: {
-        name: "Wikipedia",
+        name: "Wikipedia English",
         url: "https://en.wikipedia.org",
-        searchurl: "https://en.wikipedia.org/wiki/"
+        searchurl: "https://en.wikipedia.org/w/index.php?search=",
+    },
+    wf: {
+        name: "Wikipedia French",
+        url: "https://fr.wikipedia.org",
+        searchurl: "https://fr.wikipedia.org/w/index.php?search=",
     },
     hn: {
         name: "HackerNews Daily",
@@ -119,6 +124,14 @@ export const COMMANDS: CommandAndKeyType = {
     adp: {
         name: "ADP payroll",
         url: "https://www.adp.com"
+    },
+    speed: {
+        name: "Cloudflare Speed Test",
+        url: "https://speed.cloudflare.com/"
+    },
+    gpt: {
+        name: "Chat with GPT-3",
+        url: "https://chat.openai.com"
     },
     DEFAULT: {
         name: "Default - Duck duck go Search",
